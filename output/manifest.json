@@ -1,0 +1,397 @@
+{
+  "generated_at": "2026-08-08 18:40:31",
+  "domains": {
+    "Categories/anime": {
+      "source": "Categories/anime.lst",
+      "total_domains": 44,
+      "files": [
+        {
+          "file": "anime0.lst",
+          "lines": 44
+        }
+      ]
+    },
+    "Categories/block": {
+      "source": "Categories/block.lst",
+      "total_domains": 337,
+      "files": [
+        {
+          "file": "block0.lst",
+          "lines": 299
+        },
+        {
+          "file": "block1.lst",
+          "lines": 38
+        }
+      ]
+    },
+    "Categories/geoblock": {
+      "source": "Categories/geoblock.lst",
+      "total_domains": 466,
+      "files": [
+        {
+          "file": "geoblock0.lst",
+          "lines": 299
+        },
+        {
+          "file": "geoblock1.lst",
+          "lines": 167
+        }
+      ]
+    },
+    "Categories/hodca": {
+      "source": "Categories/hodca.lst",
+      "total_domains": 251,
+      "files": [
+        {
+          "file": "hodca0.lst",
+          "lines": 251
+        }
+      ]
+    },
+    "Categories/news": {
+      "source": "Categories/news.lst",
+      "total_domains": 186,
+      "files": [
+        {
+          "file": "news0.lst",
+          "lines": 186
+        }
+      ]
+    },
+    "Categories/porn": {
+      "source": "Categories/porn.lst",
+      "total_domains": 51,
+      "files": [
+        {
+          "file": "porn0.lst",
+          "lines": 51
+        }
+      ]
+    },
+    "Services/cloudflare": {
+      "source": "Services/cloudflare.lst",
+      "total_domains": 4,
+      "files": [
+        {
+          "file": "cloudflare0.lst",
+          "lines": 4
+        }
+      ]
+    },
+    "Services/cloudfront": {
+      "source": "Services/cloudfront.lst",
+      "total_domains": 1,
+      "files": [
+        {
+          "file": "cloudfront0.lst",
+          "lines": 1
+        }
+      ]
+    },
+    "Services/digitalocean": {
+      "source": "Services/digitalocean.lst",
+      "total_domains": 1,
+      "files": [
+        {
+          "file": "digitalocean0.lst",
+          "lines": 1
+        }
+      ]
+    },
+    "Services/discord": {
+      "source": "Services/discord.lst",
+      "total_domains": 20,
+      "files": [
+        {
+          "file": "discord0.lst",
+          "lines": 20
+        }
+      ]
+    },
+    "Services/google_ai": {
+      "source": "Services/google_ai.lst",
+      "total_domains": 28,
+      "files": [
+        {
+          "file": "google_ai0.lst",
+          "lines": 28
+        }
+      ]
+    },
+    "Services/google_meet": {
+      "source": "Services/google_meet.lst",
+      "total_domains": 5,
+      "files": [
+        {
+          "file": "google_meet0.lst",
+          "lines": 5
+        }
+      ]
+    },
+    "Services/google_play": {
+      "source": "Services/google_play.lst",
+      "total_domains": 12,
+      "files": [
+        {
+          "file": "google_play0.lst",
+          "lines": 12
+        }
+      ]
+    },
+    "Services/hdrezka": {
+      "source": "Services/hdrezka.lst",
+      "total_domains": 17,
+      "files": [
+        {
+          "file": "hdrezka0.lst",
+          "lines": 17
+        }
+      ]
+    },
+    "Services/hetzner": {
+      "source": "Services/hetzner.lst",
+      "total_domains": 1,
+      "files": [
+        {
+          "file": "hetzner0.lst",
+          "lines": 1
+        }
+      ]
+    },
+    "Services/meta": {
+      "source": "Services/meta.lst",
+      "total_domains": 18,
+      "files": [
+        {
+          "file": "meta0.lst",
+          "lines": 18
+        }
+      ]
+    },
+    "Services/ovh": {
+      "source": "Services/ovh.lst",
+      "total_domains": 1,
+      "files": [
+        {
+          "file": "ovh0.lst",
+          "lines": 1
+        }
+      ]
+    },
+    "Services/roblox": {
+      "source": "Services/roblox.lst",
+      "total_domains": 4,
+      "files": [
+        {
+          "file": "roblox0.lst",
+          "lines": 4
+        }
+      ]
+    },
+    "Services/telegram": {
+      "source": "Services/telegram.lst",
+      "total_domains": 20,
+      "files": [
+        {
+          "file": "telegram0.lst",
+          "lines": 20
+        }
+      ]
+    },
+    "Services/tiktok": {
+      "source": "Services/tiktok.lst",
+      "total_domains": 16,
+      "files": [
+        {
+          "file": "tiktok0.lst",
+          "lines": 16
+        }
+      ]
+    },
+    "Services/twitter": {
+      "source": "Services/twitter.lst",
+      "total_domains": 23,
+      "files": [
+        {
+          "file": "twitter0.lst",
+          "lines": 23
+        }
+      ]
+    },
+    "Services/youtube": {
+      "source": "Services/youtube.lst",
+      "total_domains": 18,
+      "files": [
+        {
+          "file": "youtube0.lst",
+          "lines": 18
+        }
+      ]
+    },
+    "Russia/inside-raw": {
+      "source": "Russia/inside-raw.lst",
+      "total_domains": 1183,
+      "files": [
+        {
+          "file": "inside-raw0.lst",
+          "lines": 299
+        },
+        {
+          "file": "inside-raw1.lst",
+          "lines": 299
+        },
+        {
+          "file": "inside-raw2.lst",
+          "lines": 299
+        },
+        {
+          "file": "inside-raw3.lst",
+          "lines": 286
+        }
+      ]
+    }
+  },
+  "subnets": {
+    "Discord": {
+      "source": "Subnets/IPv4/Discord.lst",
+      "total_subnets": 10,
+      "files": [
+        {
+          "file": "Discord0.bat",
+          "lines": 10
+        }
+      ]
+    },
+    "Meta": {
+      "source": "Subnets/IPv4/Meta.lst",
+      "total_subnets": 77,
+      "files": [
+        {
+          "file": "Meta0.bat",
+          "lines": 77
+        }
+      ]
+    },
+    "Twitter": {
+      "source": "Subnets/IPv4/Twitter.lst",
+      "total_subnets": 11,
+      "files": [
+        {
+          "file": "Twitter0.bat",
+          "lines": 11
+        }
+      ]
+    },
+    "cloudflare": {
+      "source": "Subnets/IPv4/cloudflare.lst",
+      "total_subnets": 15,
+      "files": [
+        {
+          "file": "cloudflare0.bat",
+          "lines": 15
+        }
+      ]
+    },
+    "cloudfront": {
+      "source": "Subnets/IPv4/cloudfront.lst",
+      "total_subnets": 211,
+      "files": [
+        {
+          "file": "cloudfront0.bat",
+          "lines": 211
+        }
+      ]
+    },
+    "digitalocean": {
+      "source": "Subnets/IPv4/digitalocean.lst",
+      "total_subnets": 168,
+      "files": [
+        {
+          "file": "digitalocean0.bat",
+          "lines": 168
+        }
+      ]
+    },
+    "discord": {
+      "source": "Subnets/IPv4/discord.lst",
+      "total_subnets": 10,
+      "files": [
+        {
+          "file": "discord0.bat",
+          "lines": 10
+        }
+      ]
+    },
+    "google_meet": {
+      "source": "Subnets/IPv4/google_meet.lst",
+      "total_subnets": 3,
+      "files": [
+        {
+          "file": "google_meet0.bat",
+          "lines": 3
+        }
+      ]
+    },
+    "hetzner": {
+      "source": "Subnets/IPv4/hetzner.lst",
+      "total_subnets": 79,
+      "files": [
+        {
+          "file": "hetzner0.bat",
+          "lines": 79
+        }
+      ]
+    },
+    "meta": {
+      "source": "Subnets/IPv4/meta.lst",
+      "total_subnets": 77,
+      "files": [
+        {
+          "file": "meta0.bat",
+          "lines": 77
+        }
+      ]
+    },
+    "ovh": {
+      "source": "Subnets/IPv4/ovh.lst",
+      "total_subnets": 607,
+      "files": [
+        {
+          "file": "ovh0.bat",
+          "lines": 607
+        }
+      ]
+    },
+    "roblox": {
+      "source": "Subnets/IPv4/roblox.lst",
+      "total_subnets": 2,
+      "files": [
+        {
+          "file": "roblox0.bat",
+          "lines": 2
+        }
+      ]
+    },
+    "telegram": {
+      "source": "Subnets/IPv4/telegram.lst",
+      "total_subnets": 10,
+      "files": [
+        {
+          "file": "telegram0.bat",
+          "lines": 10
+        }
+      ]
+    },
+    "twitter": {
+      "source": "Subnets/IPv4/twitter.lst",
+      "total_subnets": 11,
+      "files": [
+        {
+          "file": "twitter0.bat",
+          "lines": 11
+        }
+      ]
+    }
+  }
+}
