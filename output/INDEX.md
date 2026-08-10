@@ -1,28 +1,28 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-08-10 02:04:45 (UTC)
+Обновлено: 2026-08-10 12:56:33 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
 
 ## Списки доменов (Список доменных имён, до 300 строк)
 
-### Categories/anime  (`44` доменов, источник `Categories/anime.lst`)
-- `anime0.lst` (44 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/anime0.lst
+### Categories/anime  (`42` доменов, источник `Categories/anime.lst`)
+- `anime0.lst` (42 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/anime0.lst
 
-### Categories/block  (`337` доменов, источник `Categories/block.lst`)
+### Categories/block  (`335` доменов, источник `Categories/block.lst`)
 - `block0.lst` (299 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/block0.lst
-- `block1.lst` (38 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/block1.lst
+- `block1.lst` (36 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/block1.lst
 
-### Categories/geoblock  (`466` доменов, источник `Categories/geoblock.lst`)
+### Categories/geoblock  (`465` доменов, источник `Categories/geoblock.lst`)
 - `geoblock0.lst` (299 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/geoblock0.lst
-- `geoblock1.lst` (167 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/geoblock1.lst
+- `geoblock1.lst` (166 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/geoblock1.lst
 
-### Categories/hodca  (`251` доменов, источник `Categories/hodca.lst`)
-- `hodca0.lst` (251 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/hodca0.lst
+### Categories/hodca  (`250` доменов, источник `Categories/hodca.lst`)
+- `hodca0.lst` (250 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/hodca0.lst
 
-### Categories/news  (`186` доменов, источник `Categories/news.lst`)
-- `news0.lst` (186 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/news0.lst
+### Categories/news  (`184` доменов, источник `Categories/news.lst`)
+- `news0.lst` (184 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/news0.lst
 
 ### Categories/porn  (`51` доменов, источник `Categories/porn.lst`)
 - `porn0.lst` (51 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/domains/Categories/porn0.lst
@@ -98,8 +98,8 @@
 ### cloudfront  (`211` подсетей, источник `Subnets/IPv4/cloudfront.lst`)
 - `cloudfront0.bat` (211 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudfront0.bat
 
-### digitalocean  (`168` подсетей, источник `Subnets/IPv4/digitalocean.lst`)
-- `digitalocean0.bat` (168 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/digitalocean0.bat
+### digitalocean  (`167` подсетей, источник `Subnets/IPv4/digitalocean.lst`)
+- `digitalocean0.bat` (167 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/digitalocean0.bat
 
 ### discord  (`10` подсетей, источник `Subnets/IPv4/discord.lst`)
 - `discord0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/discord0.bat
@@ -113,8 +113,8 @@
 ### meta  (`77` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (77 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`607` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (607 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`610` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (610 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat

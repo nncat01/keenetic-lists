@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-10 02:04:45",
+  "generated_at": "2026-08-10 12:56:33",
   "domains": {
     "Categories/anime": {
       "source": "Categories/anime.lst",
-      "total_domains": 44,
+      "total_domains": 42,
       "files": [
         {
           "file": "anime0.lst",
-          "lines": 44
+          "lines": 42
         }
       ]
     },
     "Categories/block": {
       "source": "Categories/block.lst",
-      "total_domains": 337,
+      "total_domains": 335,
       "files": [
         {
           "file": "block0.lst",
@@ -21,13 +21,13 @@
         },
         {
           "file": "block1.lst",
-          "lines": 38
+          "lines": 36
         }
       ]
     },
     "Categories/geoblock": {
       "source": "Categories/geoblock.lst",
-      "total_domains": 466,
+      "total_domains": 465,
       "files": [
         {
           "file": "geoblock0.lst",
@@ -35,27 +35,27 @@
         },
         {
           "file": "geoblock1.lst",
-          "lines": 167
+          "lines": 166
         }
       ]
     },
     "Categories/hodca": {
       "source": "Categories/hodca.lst",
-      "total_domains": 251,
+      "total_domains": 250,
       "files": [
         {
           "file": "hodca0.lst",
-          "lines": 251
+          "lines": 250
         }
       ]
     },
     "Categories/news": {
       "source": "Categories/news.lst",
-      "total_domains": 186,
+      "total_domains": 184,
       "files": [
         {
           "file": "news0.lst",
-          "lines": 186
+          "lines": 184
         }
       ]
     },
@@ -305,11 +305,11 @@
     },
     "digitalocean": {
       "source": "Subnets/IPv4/digitalocean.lst",
-      "total_subnets": 168,
+      "total_subnets": 167,
       "files": [
         {
           "file": "digitalocean0.bat",
-          "lines": 168
+          "lines": 167
         }
       ]
     },
@@ -355,11 +355,11 @@
     },
     "ovh": {
       "source": "Subnets/IPv4/ovh.lst",
-      "total_subnets": 607,
+      "total_subnets": 610,
       "files": [
         {
           "file": "ovh0.bat",
-          "lines": 607
+          "lines": 610
         }
       ]
     },
