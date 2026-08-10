@@ -2,4 +2,4 @@
 
 # keenetic-lists
 
-Репозиторий содержит свежие списки подсетей и доменов для роутеров Keenetic/Netcraze
+Репозиторий содержит свежие списки подсетей в формате .bat и доменов из [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains/tree/main), адаптированные для роутеров Keenetic/Netcraze с учётом их особенностей
