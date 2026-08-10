@@ -68,6 +68,22 @@ def read_list_lines(path: Path) -> list[str]:
             lines.append(line)
     return lines
 
+def normalize_domains(lines: list[str]) -> list[str]:
+    """Keenetic не принимает домены с точкой в начале (.ua, .com и т.п.) —
+    у itdoginfo такие записи встречаются как минимум в Russia/inside-raw.lst.
+    Срезаем ведущие точки; если после этого строка пустая — выбрасываем её.
+    Заодно убираем дубликаты, которые могли возникнуть из-за такой нормализации
+    (например, если в списке одновременно были и ".ua", и "ua"), сохраняя порядок.
+    """
+    seen: set[str] = set()
+    result: list[str] = []
+    for line in lines:
+        domain = line.lstrip(".")
+        if not domain or domain in seen:
+            continue
+        seen.add(domain)
+        result.append(domain)
+    return result
 
 def chunk_list(items: list[str], size: int) -> list[list[str]]:
     if not items:
@@ -105,7 +121,7 @@ def write_subnet_file(out_subdir: Path, stem: str, index: int, route_lines: list
 
 def process_domain_file(src_file: Path, stem: str, out_subdir: Path) -> dict:
     clear_generated(out_subdir, stem, ".lst")
-    lines = read_list_lines(src_file)
+    lines = normalize_domains(read_list_lines(src_file))
     files = []
     for idx, part in enumerate(chunk_list(lines, DOMAIN_CHUNK_SIZE)):
         fname = write_domain_file(out_subdir, stem, idx, part)
