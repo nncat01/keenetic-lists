@@ -7,11 +7,17 @@
   - список подсетей:       не более 1024 строк на файл -> режем по 1023
   - список подсетей отдаётся в формате .bat (route ADD <net> MASK <mask> 0.0.0.0)
 
+Дополнительно подсети собираются в routes.yaml для утилиты keenetic-routes
+(github.com/vladpi/keenetic-routes), которая пушит маршруты в роутер напрямую
+через RCI API. Тут строки не режутся — у RCI нет лимита в 1024 строки, это
+ограничение только диалога импорта .bat в веб-интерфейсе.
+
 Источники:
   Categories/*.lst        -> output/domains/Categories/<name><N>.lst
   Services/*.lst          -> output/domains/Services/<name><N>.lst
   Russia/inside-raw.lst   -> output/domains/Russia/inside-raw<N>.lst
   Subnets/IPv4/*.lst      -> output/subnets/<name><N>.bat
+                          -> output/routes-wireguard0.yaml, routes-wireguard1.yaml
 
 Скрипт полностью пересобирает output/ на каждом запуске (идемпотентно),
 включая ситуацию, когда в источнике файл переименовали/удалили/добавили новый.
@@ -20,6 +26,7 @@
 import ipaddress
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -41,6 +48,11 @@ DOMAIN_SOURCE_DIRS = {
 }
 RUSSIA_RAW_FILE = ("Russia", "inside-raw.lst", "inside-raw")
 SUBNET_SOURCE_DIR = "Subnets/IPv4"
+
+# Под каждый из них генерируется отдельный routes-<interface>.yaml для
+# keenetic-routes. Пока используется один, но добавлен с запасом на второй
+# VPN-сервер, который появится на роутере в будущем.
+WIREGUARD_INTERFACES = ["Wireguard0", "Wireguard1"]
 
 
 def log(msg: str) -> None:
@@ -68,6 +80,7 @@ def read_list_lines(path: Path) -> list[str]:
             lines.append(line)
     return lines
 
+
 def normalize_domains(lines: list[str]) -> list[str]:
     """Keenetic не принимает домены с точкой в начале (.ua, .com и т.п.) —
     у itdoginfo такие записи встречаются как минимум в Russia/inside-raw.lst.
@@ -84,6 +97,7 @@ def normalize_domains(lines: list[str]) -> list[str]:
         seen.add(domain)
         result.append(domain)
     return result
+
 
 def chunk_list(items: list[str], size: int) -> list[list[str]]:
     if not items:
@@ -105,6 +119,12 @@ def write_domain_file(out_subdir: Path, stem: str, index: int, lines: list[str])
     return fname
 
 
+def normalize_cidr(cidr: str) -> str:
+    """Парсит и приводит подсеть к каноническому виду 'a.b.c.d/prefix'.
+    Бросает ValueError, если строка не является корректной подсетью/адресом."""
+    return str(ipaddress.ip_network(cidr, strict=False))
+
+
 def cidr_to_route_line(cidr: str) -> str:
     net = ipaddress.ip_network(cidr, strict=False)
     return f"route ADD {net.network_address} MASK {net.netmask} 0.0.0.0"
@@ -119,6 +139,35 @@ def write_subnet_file(out_subdir: Path, stem: str, index: int, route_lines: list
     return fname
 
 
+def yaml_scalar(value: str) -> str:
+    """Готовит строку для вставки как YAML-скаляр. Простые имена (буквы,
+    цифры, '_', '-', '.') отдаются как есть, всё остальное — в кавычках
+    с экранированием, на случай нестандартных имён исходных файлов."""
+    if re.fullmatch(r"[A-Za-z0-9_.\-]+", value):
+        return value
+    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def build_routes_yaml(cidrs_by_stem: dict[str, list[str]], interface: str) -> str:
+    """Собирает routes.yaml для keenetic-routes: один элемент списка `routes`
+    на каждый исходный файл подсетей, с комментарием = имя исходного списка.
+    reject: true — килл-свитч: если интерфейс (WireGuard) недоступен, трафик
+    на эти подсети блокируется, а не утекает через провайдера по умолчанию."""
+    lines = ["routes:"]
+    for stem in sorted(cidrs_by_stem):
+        cidrs = cidrs_by_stem[stem]
+        if not cidrs:
+            continue
+        lines.append(f"    - interface: {interface}")
+        lines.append(f"      comment: {yaml_scalar(stem)}")
+        lines.append("      auto: true")
+        lines.append("      reject: true")
+        lines.append("      hosts:")
+        for cidr in cidrs:
+            lines.append(f"        - {cidr}")
+    return "\n".join(lines) + "\n"
+
+
 def process_domain_file(src_file: Path, stem: str, out_subdir: Path) -> dict:
     clear_generated(out_subdir, stem, ".lst")
     lines = normalize_domains(read_list_lines(src_file))
@@ -131,22 +180,28 @@ def process_domain_file(src_file: Path, stem: str, out_subdir: Path) -> dict:
 
 def process_subnet_file(src_file: Path, stem: str, out_subdir: Path) -> dict:
     clear_generated(out_subdir, stem, ".bat")
-    cidrs = read_list_lines(src_file)
-    route_lines = []
-    skipped = []
-    for c in cidrs:
+    raw_cidrs = read_list_lines(src_file)
+    valid_cidrs: list[str] = []
+    route_lines: list[str] = []
+    skipped: list[str] = []
+    for c in raw_cidrs:
         try:
-            route_lines.append(cidr_to_route_line(c))
+            normalized = normalize_cidr(c)
         except ValueError:
             skipped.append(c)
+            continue
+        valid_cidrs.append(normalized)
+        route_lines.append(cidr_to_route_line(normalized))
+
     files = []
     for idx, part in enumerate(chunk_list(route_lines, SUBNET_CHUNK_SIZE)):
         fname = write_subnet_file(out_subdir, stem, idx, part)
         files.append({"file": fname, "lines": len(part)})
     result = {
         "source": str(src_file.relative_to(SRC_DIR)),
-        "total_subnets": len(route_lines),
+        "total_subnets": len(valid_cidrs),
         "files": files,
+        "cidrs": valid_cidrs,  # нужно дальше для сборки routes.yaml
     }
     if skipped:
         result["skipped_invalid"] = skipped
@@ -231,6 +286,17 @@ def main() -> None:
         log(f"ВНИМАНИЕ: не найдена папка {SUBNET_SOURCE_DIR}, пропускаю")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # routes-<interface>.yaml для keenetic-routes — по одному файлу на каждый
+    # интерфейс из WIREGUARD_INTERFACES, без разбиения на части (у RCI нет
+    # лимита в 1024 строки, это ограничение только веб-диалога импорта .bat)
+    cidrs_by_stem = {stem: entry["cidrs"] for stem, entry in manifest["subnets"].items()}
+    for interface in WIREGUARD_INTERFACES:
+        yaml_text = build_routes_yaml(cidrs_by_stem, interface)
+        out_name = f"routes-{interface.lower()}.yaml"
+        (OUT_DIR / out_name).write_text(yaml_text, encoding="utf-8")
+        log(f"Собран {out_name}")
+
     (OUT_DIR / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
