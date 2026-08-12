@@ -7,17 +7,18 @@
   - список подсетей:       не более 1024 строк на файл -> режем по 1023
   - список подсетей отдаётся в формате .bat (route ADD <net> MASK <mask> 0.0.0.0)
 
-Дополнительно подсети собираются в routes.yaml для утилиты keenetic-routes
-(github.com/vladpi/keenetic-routes), которая пушит маршруты в роутер напрямую
-через RCI API. Тут строки не режутся — у RCI нет лимита в 1024 строки, это
-ограничение только диалога импорта .bat в веб-интерфейсе.
+Дополнительно на каждый список подсетей собирается свой routes.yaml для утилиты
+keenetic-routes (github.com/vladpi/keenetic-routes), которая пушит маршруты в
+роутер напрямую через RCI API. Тут строки не режутся — у RCI нет лимита в 1024
+строки, это ограничение только диалога импорта .bat в веб-интерфейсе.
 
 Источники:
   Categories/*.lst        -> output/domains/Categories/<name><N>.lst
   Services/*.lst          -> output/domains/Services/<name><N>.lst
   Russia/inside-raw.lst   -> output/domains/Russia/inside-raw<N>.lst
   Subnets/IPv4/*.lst      -> output/subnets/<name><N>.bat
-                          -> output/routes-wireguard0.yaml, routes-wireguard1.yaml
+                          -> output/subnets_yaml/Wireguard0/<name>.yaml
+                          -> output/subnets_yaml/Wireguard1/<name>.yaml
 
 Скрипт полностью пересобирает output/ на каждом запуске (идемпотентно),
 включая ситуацию, когда в источнике файл переименовали/удалили/добавили новый.
@@ -49,9 +50,10 @@ DOMAIN_SOURCE_DIRS = {
 RUSSIA_RAW_FILE = ("Russia", "inside-raw.lst", "inside-raw")
 SUBNET_SOURCE_DIR = "Subnets/IPv4"
 
-# Под каждый из них генерируется отдельный routes-<interface>.yaml для
-# keenetic-routes. Пока используется один, но добавлен с запасом на второй
-# VPN-сервер, который появится на роутере в будущем.
+# Под каждый из них генерируется отдельная папка внутри output/subnets_yaml/
+# с одинаковым набором файлов, отличающихся только полем interface. Wireguard1
+# пока не существует на роутере физически, но папка всё равно собирается —
+# просто не загружай её через keenetic-routes, пока не поднимешь второй сервер.
 WIREGUARD_INTERFACES = ["Wireguard0", "Wireguard1"]
 
 
@@ -148,23 +150,19 @@ def yaml_scalar(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def build_routes_yaml(cidrs_by_stem: dict[str, list[str]], interface: str) -> str:
-    """Собирает routes.yaml для keenetic-routes: один элемент списка `routes`
-    на каждый исходный файл подсетей, с комментарием = имя исходного списка.
+def build_routes_yaml(stem: str, cidrs: list[str], interface: str) -> str:
+    """Собирает routes.yaml для keenetic-routes под ОДИН исходный список подсетей
+    (например, discord.lst -> discord.yaml), а не всё вперемешку одним файлом.
     reject: true — килл-свитч: если интерфейс (WireGuard) недоступен, трафик
     на эти подсети блокируется, а не утекает через провайдера по умолчанию."""
     lines = ["routes:"]
-    for stem in sorted(cidrs_by_stem):
-        cidrs = cidrs_by_stem[stem]
-        if not cidrs:
-            continue
-        lines.append(f"    - interface: {interface}")
-        lines.append(f"      comment: {yaml_scalar(stem)}")
-        lines.append("      auto: true")
-        lines.append("      reject: true")
-        lines.append("      hosts:")
-        for cidr in cidrs:
-            lines.append(f"        - {cidr}")
+    lines.append(f"    - interface: {interface}")
+    lines.append(f"      comment: {yaml_scalar(stem)}")
+    lines.append("      auto: true")
+    lines.append("      reject: true")
+    lines.append("      hosts:")
+    for cidr in cidrs:
+        lines.append(f"        - {cidr}")
     return "\n".join(lines) + "\n"
 
 
@@ -287,15 +285,24 @@ def main() -> None:
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # routes-<interface>.yaml для keenetic-routes — по одному файлу на каждый
-    # интерфейс из WIREGUARD_INTERFACES, без разбиения на части (у RCI нет
-    # лимита в 1024 строки, это ограничение только веб-диалога импорта .bat)
-    cidrs_by_stem = {stem: entry["cidrs"] for stem, entry in manifest["subnets"].items()}
+    # subnets_yaml/<Interface>/<stem>.yaml для keenetic-routes — отдельная
+    # папка на каждый интерфейс из WIREGUARD_INTERFACES, внутри — отдельный
+    # файл на каждый исходный список подсетей (discord.lst -> discord.yaml),
+    # без разбиения на части (у RCI нет лимита в 1024 строки, это ограничение
+    # только диалога импорта .bat в веб-интерфейсе). Вся subnets_yaml/
+    # полностью пересобирается на каждом запуске, чтобы не оставались файлы
+    # от удалённых/переименованных списков.
+    yaml_root = OUT_DIR / "subnets_yaml"
+    shutil.rmtree(yaml_root, ignore_errors=True)
     for interface in WIREGUARD_INTERFACES:
-        yaml_text = build_routes_yaml(cidrs_by_stem, interface)
-        out_name = f"routes-{interface.lower()}.yaml"
-        (OUT_DIR / out_name).write_text(yaml_text, encoding="utf-8")
-        log(f"Собран {out_name}")
+        interface_dir = yaml_root / interface
+        interface_dir.mkdir(parents=True, exist_ok=True)
+        for stem, entry in manifest["subnets"].items():
+            if not entry["cidrs"]:
+                continue
+            yaml_text = build_routes_yaml(stem, entry["cidrs"], interface)
+            (interface_dir / f"{stem}.yaml").write_text(yaml_text, encoding="utf-8")
+    log(f"Собрано по {len(manifest['subnets'])} файлов в subnets_yaml/{{{', '.join(WIREGUARD_INTERFACES)}}}/")
 
     (OUT_DIR / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
