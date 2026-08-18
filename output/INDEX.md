@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-08-17 01:28:15 (UTC)
+Обновлено: 2026-08-18 01:24:36 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -107,14 +107,14 @@
 ### google_meet  (`3` подсетей, источник `Subnets/IPv4/google_meet.lst`)
 - `google_meet0.bat` (3 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/google_meet0.bat
 
-### hetzner  (`79` подсетей, источник `Subnets/IPv4/hetzner.lst`)
-- `hetzner0.bat` (79 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/hetzner0.bat
+### hetzner  (`80` подсетей, источник `Subnets/IPv4/hetzner.lst`)
+- `hetzner0.bat` (80 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/hetzner0.bat
 
 ### meta  (`77` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (77 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`610` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (610 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`619` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (619 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
