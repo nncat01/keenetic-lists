@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-08-31 04:39:59 (UTC)
+Обновлено: 2026-09-01 04:21:07 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -86,8 +86,8 @@
 ### Discord  (`10` подсетей, источник `Subnets/IPv4/Discord.lst`)
 - `Discord0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Discord0.bat
 
-### Meta  (`77` подсетей, источник `Subnets/IPv4/Meta.lst`)
-- `Meta0.bat` (77 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Meta0.bat
+### Meta  (`78` подсетей, источник `Subnets/IPv4/Meta.lst`)
+- `Meta0.bat` (78 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Meta0.bat
 
 ### Twitter  (`11` подсетей, источник `Subnets/IPv4/Twitter.lst`)
 - `Twitter0.bat` (11 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Twitter0.bat
@@ -110,11 +110,11 @@
 ### hetzner  (`80` подсетей, источник `Subnets/IPv4/hetzner.lst`)
 - `hetzner0.bat` (80 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/hetzner0.bat
 
-### meta  (`77` подсетей, источник `Subnets/IPv4/meta.lst`)
-- `meta0.bat` (77 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
+### meta  (`78` подсетей, источник `Subnets/IPv4/meta.lst`)
+- `meta0.bat` (78 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`619` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (619 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`615` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (615 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
