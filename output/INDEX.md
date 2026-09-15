@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-09-14 04:09:32 (UTC)
+Обновлено: 2026-09-15 04:08:49 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -113,8 +113,8 @@
 ### meta  (`77` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (77 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`618` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (618 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`619` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (619 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
