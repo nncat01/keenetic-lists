@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-10-05 04:51:12 (UTC)
+Обновлено: 2026-10-06 05:38:11 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -89,8 +89,8 @@
 ### Meta  (`78` подсетей, источник `Subnets/IPv4/Meta.lst`)
 - `Meta0.bat` (78 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Meta0.bat
 
-### Twitter  (`11` подсетей, источник `Subnets/IPv4/Twitter.lst`)
-- `Twitter0.bat` (11 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Twitter0.bat
+### Twitter  (`10` подсетей, источник `Subnets/IPv4/Twitter.lst`)
+- `Twitter0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/Twitter0.bat
 
 ### cloudflare  (`15` подсетей, источник `Subnets/IPv4/cloudflare.lst`)
 - `cloudflare0.bat` (15 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudflare0.bat
@@ -107,14 +107,14 @@
 ### google_meet  (`3` подсетей, источник `Subnets/IPv4/google_meet.lst`)
 - `google_meet0.bat` (3 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/google_meet0.bat
 
-### hetzner  (`80` подсетей, источник `Subnets/IPv4/hetzner.lst`)
-- `hetzner0.bat` (80 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/hetzner0.bat
+### hetzner  (`81` подсетей, источник `Subnets/IPv4/hetzner.lst`)
+- `hetzner0.bat` (81 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/hetzner0.bat
 
 ### meta  (`78` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (78 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`618` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (618 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`617` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (617 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
@@ -122,5 +122,5 @@
 ### telegram  (`10` подсетей, источник `Subnets/IPv4/telegram.lst`)
 - `telegram0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/telegram0.bat
 
-### twitter  (`11` подсетей, источник `Subnets/IPv4/twitter.lst`)
-- `twitter0.bat` (11 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/twitter0.bat
+### twitter  (`10` подсетей, источник `Subnets/IPv4/twitter.lst`)
+- `twitter0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/twitter0.bat
