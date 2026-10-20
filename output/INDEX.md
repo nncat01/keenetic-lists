@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-10-19 03:57:16 (UTC)
+Обновлено: 2026-10-20 04:09:55 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -95,11 +95,11 @@
 ### cloudflare  (`15` подсетей, источник `Subnets/IPv4/cloudflare.lst`)
 - `cloudflare0.bat` (15 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudflare0.bat
 
-### cloudfront  (`211` подсетей, источник `Subnets/IPv4/cloudfront.lst`)
-- `cloudfront0.bat` (211 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudfront0.bat
+### cloudfront  (`214` подсетей, источник `Subnets/IPv4/cloudfront.lst`)
+- `cloudfront0.bat` (214 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudfront0.bat
 
-### digitalocean  (`167` подсетей, источник `Subnets/IPv4/digitalocean.lst`)
-- `digitalocean0.bat` (167 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/digitalocean0.bat
+### digitalocean  (`168` подсетей, источник `Subnets/IPv4/digitalocean.lst`)
+- `digitalocean0.bat` (168 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/digitalocean0.bat
 
 ### discord  (`10` подсетей, источник `Subnets/IPv4/discord.lst`)
 - `discord0.bat` (10 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/discord0.bat
@@ -113,8 +113,8 @@
 ### meta  (`79` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (79 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`630` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (630 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`643` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (643 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
