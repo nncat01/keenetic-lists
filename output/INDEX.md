@@ -1,6 +1,6 @@
 # Сгенерированные списки для Keenetic
 
-Обновлено: 2026-11-02 05:12:06 (UTC)
+Обновлено: 2026-11-03 05:56:01 (UTC)
 
 Файл собран автоматически, не редактируйте руками — он будет перезаписан
 при следующем запуске workflow. Правьте `scripts/build.py`.
@@ -95,8 +95,8 @@
 ### cloudflare  (`15` подсетей, источник `Subnets/IPv4/cloudflare.lst`)
 - `cloudflare0.bat` (15 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudflare0.bat
 
-### cloudfront  (`214` подсетей, источник `Subnets/IPv4/cloudfront.lst`)
-- `cloudfront0.bat` (214 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudfront0.bat
+### cloudfront  (`216` подсетей, источник `Subnets/IPv4/cloudfront.lst`)
+- `cloudfront0.bat` (216 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/cloudfront0.bat
 
 ### digitalocean  (`170` подсетей, источник `Subnets/IPv4/digitalocean.lst`)
 - `digitalocean0.bat` (170 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/digitalocean0.bat
@@ -113,8 +113,8 @@
 ### meta  (`80` подсетей, источник `Subnets/IPv4/meta.lst`)
 - `meta0.bat` (80 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/meta0.bat
 
-### ovh  (`648` подсетей, источник `Subnets/IPv4/ovh.lst`)
-- `ovh0.bat` (648 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
+### ovh  (`653` подсетей, источник `Subnets/IPv4/ovh.lst`)
+- `ovh0.bat` (653 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/ovh0.bat
 
 ### roblox  (`2` подсетей, источник `Subnets/IPv4/roblox.lst`)
 - `roblox0.bat` (2 строк) — https://raw.githubusercontent.com/nncat01/keenetic-lists/main/output/subnets/roblox0.bat
